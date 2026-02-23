@@ -22,6 +22,9 @@ print("""Valitse numerolla ja paina enter
 int(input())
 
 # TODO: Pelikoodi tähän
+while True:
+    # Jotain jotain
+    pass
 
 # Close session
 session.close()
