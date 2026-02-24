@@ -16,14 +16,9 @@ session = Session()
 # TODO: Pelikoodi tähän
 running = True
 
-
-def quit_game():
-    global running
-    running = False
-
-
 while running:
-    run_main_menu()
+    if not run_main_menu():
+        running = False
 
 # Close session
 session.close()
