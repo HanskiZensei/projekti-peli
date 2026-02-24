@@ -12,3 +12,6 @@ class Score(Base):
     name: Mapped[str] = mapped_column(String(256))
 
     score: Mapped[int]
+
+    def __repr__(self) -> str:
+        return f"Score(id={self.id!r}, name={self.question!r}, score={self.difficulty!r})"
