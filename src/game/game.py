@@ -1,7 +1,45 @@
+from typing import List
+
+from sqlalchemy import select
+from sqlalchemy.orm import sessionmaker
+
+from src.database.db import engine
+from src.database.models import Question
+
+
+class Game:
+    def __init__(self, name: str, category: str):
+        self.name = name
+        self.category = category
+
+        # Get SQLAlchemy session
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        self.session = session
+
+    def get_questions_and_answers(self, limit: int = 10) -> List[Question]:
+        # TODO: SQLAlchemy query for questions of given category
+        # Jos joku viisas keksii miten queryyn ne järkevästi ni saa tehä :D
+        query = (
+            select(Question)
+            .where(Question.category == self.category)
+            .join(Question.answers)
+            .order_by(Question.id)
+        )
+
+        results = self.session.execute(query).all()
+        print(results)
+        return results
+
+
 def run_new_game():
     # TODO: Koodaa funktioon mitä tapahtuu kun valikosta valitaan uusi peli
     # Kalle voi vastata tästä
-    select_category()
+    name: str = input("Kirjoita nimesi: ")
+    category: str = select_category()
+
+    game = Game(name, category)
+    game.get_questions_and_answers()
 
 
 def select_category() -> str:
