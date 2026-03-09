@@ -31,6 +31,25 @@ class Game:
         print(results)
         return results
 
+    def run_question(self, timer):
+        # Näytä kysymys, käynnistä ajastin yms
+        pass
+
+    def add_time(self, timer):
+        pass
+
+    def lifeline_fiftyfifty(self):
+        pass
+
+    def lifeline_add_time(self):
+        pass
+
+    def lifeline_extra_guess(self):
+        pass
+
+    def lifeline_skip_question(self):
+        pass
+
 
 def run_new_game():
     # TODO: Koodaa funktioon mitä tapahtuu kun valikosta valitaan uusi peli
@@ -73,4 +92,3 @@ def select_category(session) -> str:
     # listaa numeroituna, pyydä käyttäjää valitsemaan kategoria, palauta kategoria str returnilla
     # muista myös vaihtoehto "kaikki kategoriat", tällöin funktio voisi palauttaa esim "kaikki"
     # https://docs.sqlalchemy.org/en/20/orm/quickstart.html#simple-select
-    pass
