@@ -24,26 +24,6 @@ session = Session()
 # Disable logging
 logging.getLogger('sqlalchemy.engine.Engine').disabled = True
 
-
-# Testidatan lisäys
-# questions = [
-#     Question(question="Onko tämä testikysymys?", difficulty=2, category="Yleinen", answers=[
-#         Answer(answer="Testivastaus 1", correct=False),
-#         Answer(answer="Testivastaus 2", correct=False),
-#         Answer(answer="Testivastaus 3", correct=True),
-#         Answer(answer="Testivastaus 4", correct=False),
-#     ]),
-#     Question(question="Onko tämä toinen testikysymys?", difficulty=3, category="Yleinen", answers=[
-#         Answer(answer="Toinen vastaus 1", correct=True),
-#         Answer(answer="Toinen vastaus 2", correct=False),
-#         Answer(answer="Toinen vastaus 3", correct=False),
-#         Answer(answer="Toinen vastaus 4", correct=False),
-#     ])
-# ]
-#
-# session.add_all(questions)
-# session.commit()
-
 # Vibekoodattu importteri :)
 # def import_questions_from_csv(
 #     session: Session,
@@ -55,7 +35,7 @@ logging.getLogger('sqlalchemy.engine.Engine').disabled = True
 #     session.commit()
 #
 #     questions = []
-#     with open(questions_csv_path, newline="", encoding="cp1252") as file:
+#     with open(questions_csv_path, newline="", encoding="utf-8-sig") as file:
 #         reader = csv.reader(file, delimiter=";")
 #
 #         for row in reader:
