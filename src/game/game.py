@@ -62,7 +62,7 @@ class Game:
                     remaining = self.lifeline_fiftyfifty(self.current_question["index"])
                     if remaining:
                         self.current_question["data"]["answers"] = remaining
-                        print("\n 50/50 käytetty!")
+                        print("\n50/50 käytetty!")
                         for key, answer in enumerate(remaining, 1):
                             print(f"{key}: {answer['answer']}")
                     continue
